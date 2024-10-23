@@ -18,7 +18,10 @@ RUN apt-get update && \
 # Set the working directory inside the container
 WORKDIR /app
 
-RUN git clone https://github.com/igor-podpalchenko/ha-devi-mqtt
+# force to redownload
+ADD "https://api.github.com/repos/bob-tm/ha-devi-mqtt/commits?per_page=1" latest_commit
+RUN git clone https://github.com/bob-tm/ha-devi-mqtt
+
 RUN mv ./ha-devi-mqtt/src ./src
 RUN mv ./ha-devi-mqtt/pom.xml ./pom.xml
 RUN mv ./ha-devi-mqtt/auto-discovery-templates  ./auto-discovery-templates
@@ -39,6 +42,8 @@ ARG JAVA_VERSION=17
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+        locales \
+        locales-all \
         openjdk-${JAVA_VERSION}-jre-headless \
         zip && \
     c_rehash && \
@@ -58,5 +63,7 @@ COPY --from=build /app/auto-discovery-templates /app/auto-discovery-templates
 # Expose volume with configuration and userdata dir
 VOLUME /config
 
-CMD ["java", "-cp", "ha-devi-mqtt.jar", "io.homeassistant.devi.mqtt.service.ConsoleRunner", "--auto-discovery-templates", "/app/auto-discovery-templates", "--mqtt-config", "/config/mqtt_config.json", "--devi-config", "/config/devi_config.json"]
-
+# Set working directory and entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
