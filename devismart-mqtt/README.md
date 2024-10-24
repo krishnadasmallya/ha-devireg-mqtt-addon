@@ -1,3 +1,16 @@
+## Installation on HAOS/supervised
+
+Navigate to the [main repository page](https://github.com/bob-tm/ha-devireg-mqtt-addon)
+and push the button to add it to HA, or add it manually:
+
+1. Navigate to addons page on your HA installation
+2. Press three dots in the top right corner
+3. Add repository `https://github.com/bob-tm/ha-devireg-mqtt-addon` to addon repositories
+4. Install addon from addons page
+5. Start addon and visit its page
+
+
+
 # Devireg Mqtt Addon
 
 Based on <https://github.com/igor-podpalchenko/ha-devi-mqtt>
