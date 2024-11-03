@@ -50,6 +50,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 	
+# ssh server 
+RUN apt-get update && apt-get install -y python3
+
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -62,6 +66,10 @@ COPY --from=build /app/auto-discovery-templates /app/auto-discovery-templates
 
 # Expose volume with configuration and userdata dir
 VOLUME /config
+
+#config script
+COPY config.sh /config.sh
+RUN chmod +x /config.sh
 
 # Set working directory and entrypoint
 COPY entrypoint.sh /entrypoint.sh

@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Devismart MQTT
-version: "0.2.3"
+version: "0.3 beta"
 slug: devismart-mqtt
 description: Devismart MQTT Addon
 url: "https://github.com/bob-tm/ha-devireg-mqtt-addon/"
@@ -11,7 +11,19 @@ arch:
   - amd64
 init: false
 startup: application
+ports:
+  8000/tcp: 8000
 services:
   - mqtt:need
 map:
   - addon_config:rw
+options:
+  host: localhost
+  port: 1883
+  user: ""
+  password: ""
+schema:
+  host: str
+  port: port
+  user: str
+  password: password
