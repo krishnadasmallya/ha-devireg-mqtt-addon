@@ -13,9 +13,7 @@ Press the button, or
 
 
 # Devireg Mqtt Home Assistant add-on repository
-
-Based on <https://github.com/igor-podpalchenko/ha-devi-mqtt> and 
-my fork <https://github.com/bob-tm/ha-devi-mqtt> 
+Addon uses latest code from <https://github.com/bob-tm/ha-devi-mqtt> (my fork from original <https://github.com/igor-podpalchenko/ha-devi-mqtt>) 
 
 See https://github.com/bob-tm/ha-devireg-mqtt-addon/blob/main/devismart-mqtt/DOCS.md for details
 
