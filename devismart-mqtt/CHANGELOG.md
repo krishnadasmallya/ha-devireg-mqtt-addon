@@ -1,5 +1,8 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 0.3 beta2
+- Update kwh to kWh
+  
 ## 0.3 beta
 - Fixed Negative Power output for 3200 watt
 - MQTT config moved to GUI
