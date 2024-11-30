@@ -11,7 +11,7 @@ Version 0.3+ can generate it inside this addon (not tested)
 ## How to generate devi_config.json in 0.3 Beta +
 # Method1: Inside addon (preferred)
 
-0. Change mqtt options. For local mosquitto addon set host to “core-mosquitto” or local HomeAssistant address and add user and password.
+0. Set mqtt server params. For HA mosquitto addon set host to "core-mosquitto" or local HA address ("192.168.x.x") and add user and password.
 1. Start Devismart MQTT addon. Check logs for message (devi_config.json not found. Running in waiting mode)
 2. Install and Run Advanced SSH & Web Terminal https://github.com/hassio-addons/addon-ssh
 3. Disable Protection mode Advanced SSH & Web Terminal (remember to reboot)
