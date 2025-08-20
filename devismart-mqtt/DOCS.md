@@ -1,5 +1,5 @@
 # Devireg Mqtt Add-on:
-Based on <https://github.com/igor-podpalchenko/ha-devi-mqtt> and my fork <https://github.com/bob-tm/ha-devi-mqtt>
+Based on <https://github.com/igor-podpalchenko/ha-devi-mqtt> and my fork <https://github.com/julienma/ha-devi-mqtt>
 
 ## How to Use 
 Configure MQTT settings in addon settings. Version 0.3+ uses GUI, not mqtt_config.json.
@@ -33,4 +33,3 @@ Version 0.3+ can generate it inside this addon (not tested)
 4. SRestart Devismart MQTT addon.
 5. Check addon logs for message (Config Exists!) or list of autodiscovered items.
 6. Go to MQTT Integration and check for Devi devices!
-

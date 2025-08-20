@@ -19,8 +19,8 @@ RUN apt-get update && \
 WORKDIR /app
 
 # force to redownload
-ADD "https://api.github.com/repos/bob-tm/ha-devi-mqtt/commits?per_page=1" latest_commit
-RUN git clone https://github.com/bob-tm/ha-devi-mqtt
+ADD "https://api.github.com/repos/julienma/ha-devi-mqtt/commits?per_page=1" latest_commit
+RUN git clone https://github.com/julienma/ha-devi-mqtt
 
 RUN mv ./ha-devi-mqtt/src ./src
 RUN mv ./ha-devi-mqtt/pom.xml ./pom.xml
@@ -49,8 +49,8 @@ RUN apt-get update && \
     c_rehash && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-	
-# ssh server 
+
+# ssh server
 RUN apt-get update && apt-get install -y python3
 
 
